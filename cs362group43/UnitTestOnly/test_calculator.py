@@ -13,6 +13,8 @@
 
 import unittest
 import sys
+from unittest import TestCase
+import math
 import calculator
 
 
@@ -218,7 +220,7 @@ class TestCase(unittest.TestCase):
     def test_multiply_validNonEdgeCaseData_case4(self):
         # Initialize the test data.
         input1 = 11
-        input2 = 1/3
+        input2 = 1 / 3
         expectedProduct = input1 * input2
 
         # Call the function under test.
@@ -233,8 +235,8 @@ class TestCase(unittest.TestCase):
     # where input1 is a negative fraction and input2 is a positive fraction.
     def test_multiply_validNonEdgeCaseData_case5(self):
         # Initialize the test data.
-        input1 = -9/37
-        input2 = 12/13
+        input1 = -9 / 37
+        input2 = 12 / 13
         expectedProduct = input1 * input2
 
         # Call the function under test.
@@ -250,7 +252,7 @@ class TestCase(unittest.TestCase):
     def test_multiply_validNonEdgeCaseData_case6(self):
         # Initialize the test data.
         input1 = -99.99999
-        input2 = 20/333
+        input2 = 20 / 333
         expectedProduct = input1 * input2
 
         # Call the function under test.
@@ -582,7 +584,7 @@ class TestCase(unittest.TestCase):
     def test_divide_validNonEdgeCaseData_case4(self):
         # Initialize the test data.
         input1 = 11
-        input2 = 1/3
+        input2 = 1 / 3
         expectedQuotient = input1 / input2
 
         # Call the function under test.
@@ -597,8 +599,8 @@ class TestCase(unittest.TestCase):
     # where input1 is a negative fraction and input2 is a positive fraction.
     def test_divide_validNonEdgeCaseData_case5(self):
         # Initialize the test data.
-        input1 = -9/37
-        input2 = 12/13
+        input1 = -9 / 37
+        input2 = 12 / 13
         expectedQuotient = input1 / input2
 
         # Call the function under test.
@@ -614,7 +616,7 @@ class TestCase(unittest.TestCase):
     def test_divide_validNonEdgeCaseData_case6(self):
         # Initialize the test data.
         input1 = -99.99999
-        input2 = 20/333
+        input2 = 20 / 333
         expectedQuotient = input1 / input2
 
         # Call the function under test.
@@ -887,7 +889,7 @@ class TestCase(unittest.TestCase):
     # that is a positive fraction.
     def test_square_validNonEdgeCaseData_case3(self):
         # Initialize the test data.
-        input1 = 1/3
+        input1 = 1 / 3
         expectedSquare = input1 * input1
 
         # Call the function under test.
@@ -902,7 +904,7 @@ class TestCase(unittest.TestCase):
     # that is a negative fraction.
     def test_square_validNonEdgeCaseData_case4(self):
         # Initialize the test data.
-        input1 = -9/37
+        input1 = -9 / 37
         expectedSquare = input1 * input1
 
         # Call the function under test.
@@ -984,3 +986,410 @@ class TestCase(unittest.TestCase):
 
         # Assert expectations after the function call.
         self.assertEqual(expectedSquare, squareOutput)
+
+    # Invalid data test case 1 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is string of number characters
+    def test_absolute_invalidData_case1(self):
+        input1 = '12345'
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 2 for absolute() function
+    # Description:
+    # Check that absolute() returns the None when the input is character of a number
+    def test_absolute_invalidData_case2(self):
+        input1 = '9'
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 3 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a list of numbers
+    def test_absolute_invalidData_case3(self):
+        input1 = [1, 2, 54]
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 4 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a complex number
+    def test_absolute_invalidData_case4(self):
+        input1 = complex(7, 7)
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 5 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a boolean
+    def test_absolute_invalidData_case5(self):
+        input1 = True
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 6 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is None
+    def test_absolute_invalidData_case6(self):
+        input1 = None
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 7 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is greater than sys.maxsize
+    def test_absolute_invalidData_case7(self):
+        input1 = sys.maxsize + 30
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 8 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a less than -sys.maxsize
+    def test_absolute_invalidData_case8(self):
+        input1 = (-sys.maxsize) - 10
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 9 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a positive infinite float
+    def test_absolute_invalidData_case9(self):
+        input1 = float("inf")
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 10 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a positive infinite float
+    def test_absolute_invalidData_case10(self):
+        input1 = (-float("inf"))
+        self.assertIsNone(calculator.Calculator.absolute(input1))
+
+    # Valid non-edge data test case 1 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a positive int
+    def test_absolute_validNonEdgeCaseData_case1(self):
+        input1 = 2
+        expected = math.abs(input1)
+        self.assertIsEqual(expected, calculator.Calculator.absolute(input1))
+
+    # Valid non-edge data test case 2 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a negative int
+    def test_absolute_validNonEdgeCaseData_case2(self):
+        input1 = -999
+        expected = math.abs(input1)
+        self.assertIsEqual(expected, calculator.Calculator.absolute(input1))
+
+    # Valid non-edge data test case 3 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a negative float
+    def test_absolute_validNonEdgeCaseData_case3(self):
+        input1 = -79.7979
+        expected = math.abs(input1)
+        self.assertIsEqual(expected, calculator.Calculator.absolute(input1))
+
+    # Valid non-edge data test case 4 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is a positive float
+    def test_absolute_validNonEdgeCaseData_case4(self):
+        input1 = 110.998
+        expected = math.abs(input1)
+        self.assertIsEqual(expected, calculator.Calculator.absolute(input1))
+
+    # Valid edge data test case 1 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is zero
+    def test_absolute_validEdgeCaseData_case1(self):
+        input1 = 0
+        self.assertIsEqual(0, calculator.Calculator.absolute(input1))
+
+    # Valid edge data test case 2 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is sys.maxsize
+    def test_absolute_validEdgeCaseData_case2(self):
+        input1 = sys.maxsize
+        self.assertIsEqual(sys.maxsize, calculator.Calculator.absolute(input1))
+
+    # Valid edge data test case 3 for absolute() function
+    # Description:
+    # Check that absolute() returns None when the input is -sys.maxsize
+    def test_absolute_validEdgeCaseData_case3(self):
+        input1 = (-sys.maxsize)
+        self.assertIsEqual(sys.maxsize, calculator.Calculator.absolute(input1))
+
+    # Invalid data test case 1 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is string of number characters
+    def test_sine_invalidData_case1(self):
+        input1 = '12345'
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 2 for sine() function
+    # Description:
+    # Check that sine() returns the None when the input is character of a number
+    def test_sine_invalidData_case2(self):
+        input1 = '9'
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 3 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is a list of numbers
+    def test_sine_invalidData_case3(self):
+        input1 = [1, 2, 54]
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 4 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is a complex number
+    def test_sine_invalidData_case4(self):
+        input1 = complex(7, 7)
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 5 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is a boolean
+    def test_sine_invalidData_case5(self):
+        input1 = True
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 6 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is None
+    def test_sine_invalidData_case6(self):
+        input1 = None
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 7 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is greater than sys.maxsize
+    def test_sine_invalidData_case7(self):
+        input1 = sys.maxsize + 30
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 8 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is a less than -sys.maxsize
+    def test_sine_invalidData_case8(self):
+        input1 = (-sys.maxsize) - 10
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 9 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is a positive infinite float
+    def test_sine_invalidData_case9(self):
+        input1 = float("inf")
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Invalid data test case 10 for sine() function
+    # Description:
+    # Check that sine() returns None when the input is a positive infinite float
+    def test_sine_invalidData_case10(self):
+        input1 = (-float("inf"))
+        self.assertIsNone(calculator.Calculator.sine(input1))
+
+    # Valid non-edge data test case 1 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is a positive int
+    def test_sine_validNonEdgeCaseData_case1(self):
+        input1 = 2
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid non-edge data test case 2 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is a negative int
+    def test_sine_validNonEdgeCaseData_case2(self):
+        input1 = -999
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid non-edge data test case 3 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is a negative float
+    def test_sine_validNonEdgeCaseData_case3(self):
+        input1 = -79.7979
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid non-edge data test case 4 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is a positive float
+    def test_sine_validNonEdgeCaseData_case4(self):
+        input1 = 110.998
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid non-edge data test case 5 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is a multiple of pi
+    def test_sine_validNonEdgeCaseData_case5(self):
+        input1 = 2 * math.pi
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid Edge data test case 1 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is zero
+    def test_sine_validEdgeCaseData_case1(self):
+        input1 = 0
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid Edge data test case 2 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is sys.maxsize
+    def test_sine_validEdgeCaseData_case2(self):
+        input1 = sys.maxsize
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid Edge data test case 3 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is -sys.maxsize
+    def test_sine_validEdgeCaseData_case3(self):
+        input1 = (-sys.maxsize)
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Valid Edge data test case 4 for sine() function
+    # Description:
+    # Check that sine() returns the expected result when the input is inverse multiple of pi
+    def test_sine_validEdgeCaseData_case4(self):
+        input1 = math.pi * (-3)
+        expected = math.sin(input1)
+        self.assertIsEqual(expected, calculator.Calculator.sine(input1))
+
+    # Invalid data test case 1 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is string of number characters
+    def test_cosine_invalidData_case1(self):
+        input1 = '12345'
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 2 for cosine() function
+    # Description:
+    # Check that cosine() returns the None when the input is character of a number
+    def test_cosine_invalidData_case2(self):
+        input1 = '9'
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 3 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is a list of numbers
+    def test_cosine_invalidData_case3(self):
+        input1 = [1, 2, 54]
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 4 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is a complex number
+    def test_cosine_invalidData_case4(self):
+        input1 = complex(7, 7)
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 5 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is a boolean
+    def test_cosine_invalidData_case5(self):
+        input1 = True
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 6 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is None
+    def test_cosine_invalidData_case6(self):
+        input1 = None
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 7 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is greater than sys.maxsize
+    def test_cosine_invalidData_case7(self):
+        input1 = sys.maxsize + 30
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 8 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is a less than -sys.maxsize
+    def test_cosine_invalidData_case8(self):
+        input1 = (-sys.maxsize) - 10
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 9 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is a positive infinite float
+    def test_cosine_invalidData_case9(self):
+        input1 = float("inf")
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Invalid data test case 10 for cosine() function
+    # Description:
+    # Check that cosine() returns None when the input is a positive infinite float
+    def test_cosine_invalidData_case10(self):
+        input1 = (-float("inf"))
+        self.assertIsNone(calculator.Calculator.cosine(input1))
+
+    # Valid non-edge data test case 1 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is a positive int
+    def test_cosine_validNonEdgeCaseData_case1(self):
+        input1 = 2
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid non-edge data test case 2 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is a negative int
+    def test_cosine_validNonEdgeCaseData_case2(self):
+        input1 = -999
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid non-edge data test case 3 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is a negative float
+    def test_cosine_validNonEdgeCaseData_case3(self):
+        input1 = -79.7979
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid non-edge data test case 4 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is a positive float
+    def test_cosine_validNonEdgeCaseData_case4(self):
+        input1 = 110.998
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid non-edge data test case 5 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is a multiple of pi
+    def test_cosine_validNonEdgeCaseData_case5(self):
+        input1 = 2 * math.pi
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid Edge data test case 1 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is zero
+    def test_cosine_validEdgeCaseData_case1(self):
+        input1 = 0
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid Edge data test case 2 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is sys.maxsize
+    def test_cosine_validEdgeCaseData_case2(self):
+        input1 = sys.maxsize
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid Edge data test case 3 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is -sys.maxsize
+    def test_cosine_validEdgeCaseData_case3(self):
+        input1 = (-sys.maxsize)
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
+
+    # Valid Edge data test case 4 for cosine() function
+    # Description:
+    # Check that cosine() returns the expected result when the input is inverse multiple of pi
+    def test_cosine_validEdgeCaseData_case4(self):
+        input1 = math.pi * (-3)
+        expected = math.cos(input1)
+        self.assertIsEqual(expected, calculator.Calculator.cosine(input1))
