@@ -57,4 +57,26 @@ class Calculator:
     def cosine(input1):
         return None
 
+    # This function takes one numerical input of type int or float, and returns the square root of the input.
+    # If the input provided is not of type int or float, the function returns None.
+    # If the input provided is outside the range 0 <= input <= sys.maxsize, the function returns None.
+    # This function expects that one numerical input is provided.
+    def SQRT(input1):
+        return None
+        
+    # This function takes one numerical input of type int or float (with decimal = 0 eg 1.0), and returns the factorial of the input.
+    # If the input provided is not of type int or float (with decimal = 0 eg 1.0), the function returns None.
+    # If the input provided is outside the range 0 <= input <= 100, the function returns None.
+    # This function expects that one numerical input is provided.
+    def factorial(input1):
+        return None
+        
+    # This function takes one numerical input of type int or float, and returns the inverse (1/x) of the input.
+    # If the input provided is not of type int or float, the function returns None.
+    # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, or if the input is zero, the function returns None.
+    # This function expects that one numerical input is provided.
+    def inverse(input1):
+        return None
+		
+		
 
