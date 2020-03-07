@@ -986,36 +986,19 @@ class TestCase(unittest.TestCase):
 
         # Assert expectations after the function call.
         self.assertEqual(expectedSquare, squareOutput)
-
-        
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#David section begin
-
-'''
-'''Invalid Data Test Cases
-Test Case 1
-Check that SQRT() returns None when an input is a string consisting of number characters.'''
-
+    '''
+    
+    
+    
+    SQRT
+    
+    
+    
+    '''
+    #SQRT
+    '''Invalid Data Test Cases
+    Test Case 1
+    Check that SQRT() returns None when an input is a string consisting of number characters.'''
     def test_SQRT_invalidData_case1(self):
         # Initialize the test data.
         input1 = '09'
@@ -1098,7 +1081,7 @@ Check that SQRT() returns None when an input is a string consisting of number ch
 
     def test_SQRT_invalidData_case9(self):
         # Initialize the test data.
-        input1 =  float(“inf”)
+        input1 =  math.inf
 
         # Call the function under test.
         SQRTOutput = calculator.Calculator.SQRT(input1)
@@ -1167,20 +1150,20 @@ Check that SQRT() returns None when an input is a string consisting of number ch
 
         # Assert expectations after the function call.
         self.assertEqual(SQRTOutput, math.sqrt(sys.maxsize))
-'''
-
-
-
-
-
-Inverse
-
-
-
-
-
-
-'''
+    '''
+    
+    
+    
+    
+    
+    Inverse
+    
+    
+    
+    
+    
+    
+    '''
 #Invalid Data Test Cases
     def test_inverse_invalidData_case1(self):
         # Initialize the test data.
@@ -1265,7 +1248,7 @@ Inverse
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
-        input1 =  float(“inf”)
+        input1 =  math.inf
 
         # Call the function under test.
         inverseOutput = calculator.Calculator.inverse(input1)
@@ -1275,7 +1258,7 @@ Inverse
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
-        input1 =  -float(“inf”)
+        input1 =  -1 * math.inf
 
         # Call the function under test.
         inverseOutput = calculator.Calculator.inverse(input1)
@@ -1304,7 +1287,7 @@ Inverse
         self.assertIsNone(inverseOutput)
 
     #Valid Non-Edge Case Data Test Cases
-     def test_inverse_validNonEdgeCaseData_case1(self):
+    def test_inverse_validNonEdgeCaseData_case1(self):
         # Initialize the test data.
         input1 = 2
 
@@ -1314,7 +1297,7 @@ Inverse
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, (1/2))
 
-      def test_inverse_validNonEdgeCaseData_case2(self):
+    def test_inverse_validNonEdgeCaseData_case2(self):
         # Initialize the test data.
         input1 = -999
 
@@ -1324,7 +1307,7 @@ Inverse
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, (1/-999))
 
-     def test_inverse_validNonEdgeCaseData_case3(self):
+    def test_inverse_validNonEdgeCaseData_case3(self):
         # Initialize the test data.
         input1 = 1/3
 
@@ -1334,7 +1317,7 @@ Inverse
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, (3))
 
-     def test_inverse_validNonEdgeCaseData_case4(self):
+    def test_inverse_validNonEdgeCaseData_case4(self):
         # Initialize the test data.
         input1 = 2
 
@@ -1344,7 +1327,7 @@ Inverse
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, (1/2))
 
-     def test_inverse_validNonEdgeCaseData_case4(self):
+    def test_inverse_validNonEdgeCaseData_case4(self):
         # Initialize the test data.
         input1 = -88.8879
 
@@ -1355,7 +1338,7 @@ Inverse
         self.assertEqual(inverseOutput, (1/-88.8879))
 
     #Valid Edge Case Data Test Cases
-     def test_inverse_validEdgeCaseData_case1(self):
+    def test_inverse_validEdgeCaseData_case1(self):
         # Initialize the test data.
         input1 = 0.00001
 
@@ -1365,7 +1348,7 @@ Inverse
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, 100000)
 
-     def test_inverse_validEdgeCaseData_case2(self):
+    def test_inverse_validEdgeCaseData_case2(self):
         # Initialize the test data.
         input1 = -0.00001
 
@@ -1375,7 +1358,7 @@ Inverse
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, -100000)
 
-     def test_inverse_validEdgeCaseData_case3(self):
+    def test_inverse_validEdgeCaseData_case3(self):
         # Initialize the test data.
         input1 = sys.maxsize
 
@@ -1385,7 +1368,7 @@ Inverse
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, (1/input1))
         
-     def test_inverse_validEdgeCaseData_case4(self):
+    def test_inverse_validEdgeCaseData_case4(self):
         # Initialize the test data.
         input1 = -sys.maxsize
 
@@ -1394,22 +1377,22 @@ Inverse
 
         # Assert expectations after the function call.
         self.assertEqual(inverseOutput, (1/input1))
-'''
-
-
-
-
-
-
-
-factorial
-
-
-
-
-
-'''
-#Invalid Data Test Cases
+    '''
+    
+    
+    
+    
+    
+    
+    
+    factorial
+    
+    
+    
+    
+    
+    '''
+    #Invalid Data Test Cases
     def test_factorial_invalidData_case1(self):
         # Initialize the test data.
         input1 = '99'
@@ -1503,7 +1486,7 @@ factorial
 
     def test_factorial_invalidData_case10(self):
         # Initialize the test data.
-        input1 =  -float(“inf”)
+        input1 =  -1*math.inf
 
         # Call the function under test.
         factorialOutput = calculator.Calculator.factorial(input1)
@@ -1532,7 +1515,7 @@ factorial
         self.assertIsNone(factorialOutput)
    
     #Valid Non Edge Case Data Test Cases
-     def test_factorial_validNonEdgeCaseData_case1(self):
+    def test_factorial_validNonEdgeCaseData_case1(self):
         # Initialize the test data.
         input1 = 2
         # Call the function under test.

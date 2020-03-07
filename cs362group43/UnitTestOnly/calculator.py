@@ -77,6 +77,6 @@ class Calculator:
     # This function expects that one numerical input is provided.
     def inverse(input1):
         return None
-		
-		
+        
+        
 
