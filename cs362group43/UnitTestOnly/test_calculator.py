@@ -1166,7 +1166,13 @@ Check that SQRT() returns None when an input is a string consisting of number ch
 '''
 
 
+
+
+
 Inverse
+
+
+
 
 
 
@@ -1177,40 +1183,40 @@ Inverse
         input1 = '99'
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case2(self):
         # Initialize the test data.
         input1 = '9'
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case3(self):
         # Initialize the test data.
         input1 =  [1, 2, 54]
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case4(self):
         # Initialize the test data.
         input1 = complex(7, 7)
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
 
     def test_inverse_invalidData_case5(self):
@@ -1218,81 +1224,354 @@ Inverse
         input1 = True
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case6(self):
         # Initialize the test data.
         input1 = None
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case7(self):
         # Initialize the test data.
         input1 = sys.maxsize + 30
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case9(self):
         # Initialize the test data.
         input1 = -sys.maxsize - 3
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
         input1 =  float(“inf”)
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
         input1 =  -float(“inf”)
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
         input1 =  0
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
         input1 =  (1,2 )
 
         # Call the function under test.
-        SQRTOutput = calculator.Calculator.SQRT(input1)
+        inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertIsNone(SQRTOutput)
+        self.assertIsNone(inverseOutput)
+
+    #Valid Non-Edge Case Data Test Cases
+     def test_inverse_validNonEdgeCaseData_case1(self):
+        # Initialize the test data.
+        input1 = 2
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, (1/2))
+
+      def test_inverse_validNonEdgeCaseData_case2(self):
+        # Initialize the test data.
+        input1 = -999
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, (1/-999))
+
+     def test_inverse_validNonEdgeCaseData_case3(self):
+        # Initialize the test data.
+        input1 = 1/3
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, (3))
+
+     def test_inverse_validNonEdgeCaseData_case4(self):
+        # Initialize the test data.
+        input1 = 2
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, (1/2))
+
+     def test_inverse_validNonEdgeCaseData_case4(self):
+        # Initialize the test data.
+        input1 = -88.8879
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, (1/-88.8879))
+
+    #Valid Edge Case Data Test Cases
+     def test_inverse_validEdgeCaseData_case1(self):
+        # Initialize the test data.
+        input1 = 0.00001
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, 100000)
+
+     def test_inverse_validEdgeCaseData_case2(self):
+        # Initialize the test data.
+        input1 = -0.00001
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, -100000)
+
+     def test_inverse_validEdgeCaseData_case3(self):
+        # Initialize the test data.
+        input1 = sys.maxsize
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, (1/input1))
+        
+     def test_inverse_validEdgeCaseData_case4(self):
+        # Initialize the test data.
+        input1 = -sys.maxsize
+
+        # Call the function under test.
+        inverseOutput = calculator.Calculator.inverse(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(inverseOutput, (1/input1))
+'''
 
 
 
- 
+
+
+
+
+factorial
+
+
+
+
+
+'''
+#Invalid Data Test Cases
+    def test_factorial_invalidData_case1(self):
+        # Initialize the test data.
+        input1 = '99'
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case2(self):
+        # Initialize the test data.
+        input1 = '9'
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case3(self):
+        # Initialize the test data.
+        input1 = [1, 2, 54]
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case4(self):
+        # Initialize the test data.
+        input1 = complex(7, 7)
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case5(self):
+        # Initialize the test data.
+        input1 = True
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case6(self):
+        # Initialize the test data.
+        input1 = None
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+
+    def test_factorial_invalidData_case7(self):
+        # Initialize the test data.
+        input1 = 101
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case8(self):
+        # Initialize the test data.
+        input1 = -1
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case9(self):
+        # Initialize the test data.
+        input1 = floart("inf")
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case10(self):
+        # Initialize the test data.
+        input1 =  -float(“inf”)
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case11(self):
+        # Initialize the test data.
+        input1 = 1.3
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+
+    def test_factorial_invalidData_case12(self):
+        # Initialize the test data.
+        input1 =  (1,2)
+
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertIsNone(factorialOutput)
+   
+    #Valid Non Edge Case Data Test Cases
+     def test_factorial_validNonEdgeCaseData_case1(self):
+        # Initialize the test data.
+        input1 = 2
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(factorialOutput, math.factorial(input1))
+    
+    def test_factorial_validNonEdgeCaseData_case2(self):
+        # Initialize the test data.
+        input1 = 99.0
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(factorialOutput, math.factorial(input1))
+
+    #Valid Edge Case Data Test Cases
+    def test_factorial_validEdgeCaseData_case1(self):
+        # Initialize the test data.
+        input1 = 0.0
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(factorialOutput, math.factorial(input1))
+
+    def test_factorial_validEdgeCaseData_case2(self):
+        # Initialize the test data.
+        input1 = 100
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(factorialOutput, math.factorial(input1))
+
+    def test_factorial_validEdgeCaseData_case1(self):
+        # Initialize the test data.
+        input1 = 0
+        # Call the function under test.
+        factorialOutput = calculator.Calculator.factorial(input1)
+
+        # Assert expectations after the function call.
+        self.assertEqual(factorialOutput, math.factorial(input1))
+
+
