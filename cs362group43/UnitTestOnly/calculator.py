@@ -35,3 +35,26 @@ class Calculator:
     # This function expects that one numerical input is provided.
     def square(input1):
         return None
+
+    # This function takes one numerical input of type int or float, and returns the absolute value of the input.
+    # If the input provided is not of type int or float, the function returns None.
+    # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
+    # This function expects that one numerical input is provided.
+    def absolute(input1):
+        return None
+
+    # This function takes one numerical input of type int or float, and returns the sine of the input in radians.
+    # If the input provided is not of type int or float, the function returns None.
+    # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
+    # This function expects that one numerical input is provided.
+    def sine(input1):
+        return None
+
+    # This function takes one numerical input of type int or float, and returns the cosine of the input in radians.
+    # If the input provided is not of type int or float, the function returns None.
+    # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
+    # This function expects that one numerical input is provided.
+    def cosine(input1):
+        return None
+
+
