@@ -41,7 +41,14 @@ class Calculator:
     # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
     # This function expects that one numerical input is provided.
     def absolute(input1):
-        return None
+        if type(input1) != int or type(input1) != float:
+            return None
+        if input1 >= 0:
+            return input1
+        else:
+            inverse = input1 * (-2)
+            total = input1 + inverse
+            return total
 
     # This function takes one numerical input of type int or float, and returns the sine of the input in radians.
     # If the input provided is not of type int or float, the function returns None.
