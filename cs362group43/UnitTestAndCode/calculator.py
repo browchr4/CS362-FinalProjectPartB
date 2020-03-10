@@ -9,8 +9,8 @@
 # This program implements a Calculator class containing functions that perform the reduced set of calculator
 # operations specified in the Final Project requirements linked above. The calculator functions are described
 # in the Test Plan document created for Final Project Part A requirements linked above.
-
-
+import math
+import sys
 # Calculator class
 class Calculator:
 
@@ -41,7 +41,14 @@ class Calculator:
     # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
     # This function expects that one numerical input is provided.
     def absolute(input1):
-        return None
+        if type(input1) != int or type(input1) != float:
+            return None
+        if input1 >= 0:
+            return input1
+        else:
+            inverse = input1 * (-2)
+            total = input1 + inverse
+            return total
 
     # This function takes one numerical input of type int or float, and returns the sine of the input in radians.
     # If the input provided is not of type int or float, the function returns None.
@@ -61,22 +68,55 @@ class Calculator:
     # If the input provided is not of type int or float, the function returns None.
     # If the input provided is outside the range 0 <= input <= sys.maxsize, the function returns None.
     # This function expects that one numerical input is provided.
+    @staticmethod
     def SQRT(input1):
-        return None
-        
+        if input1 is None or isinstance(input1, str) or isinstance(input1, list) or\
+                isinstance(input1, tuple) or isinstance(input1, complex) or isinstance(input1, bool) or input1 < 0 :
+            return None
+        elif input1 > sys.maxsize:
+            return None
+        elif input1 == math.inf or input1 == -1 * math.inf:
+            return None
+        else:
+            return input1**.5
     # This function takes one numerical input of type int or float (with decimal = 0 eg 1.0), and returns the factorial of the input.
     # If the input provided is not of type int or float (with decimal = 0 eg 1.0), the function returns None.
     # If the input provided is outside the range 0 <= input <= 100, the function returns None.
     # This function expects that one numerical input is provided.
+
+    @staticmethod
     def factorial(input1):
-        return None
+        if input1 is None or isinstance(input1, str) or isinstance(input1, list) or\
+                isinstance(input1, tuple) or isinstance(input1, complex) or isinstance(input1, bool) or input1 < 0:
+            return None
+        elif input1 > 100:
+            return None
+        elif isinstance(input1, float) and not input1.is_integer():
+            return None
+        else:
+            result = 1
+            while input1 != 0:
+                result = input1 * result
+                input1 = input1 - 1
+        return result
         
     # This function takes one numerical input of type int or float, and returns the inverse (1/x) of the input.
     # If the input provided is not of type int or float, the function returns None.
     # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, or if the input is zero, the function returns None.
     # This function expects that one numerical input is provided.
+    @staticmethod
     def inverse(input1):
-        return None
-        
+        if input1 == 0 or input1 == 0.0 or input1 is None or isinstance(input1, str) or isinstance(input1, list) or\
+                isinstance(input1, tuple) or isinstance(input1, complex) or isinstance(input1, bool):
+            return None
+        elif input1 > sys.maxsize:
+            return None
+        elif input1 < -1 * sys.maxsize:
+            return None
+        elif input1 == math.inf or input1 == -1 * math.inf:
+            return None
+        else:
+            return 1 / input1
+
         
 

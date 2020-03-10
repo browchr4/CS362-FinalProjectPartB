@@ -986,6 +986,7 @@ class TestCase(unittest.TestCase):
 
         # Assert expectations after the function call.
         self.assertEqual(expectedSquare, squareOutput)
+
     '''
     
     
@@ -1248,7 +1249,7 @@ class TestCase(unittest.TestCase):
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
-        input1 =  math.inf
+        input1 = math.inf
 
         # Call the function under test.
         inverseOutput = calculator.Calculator.inverse(input1)
@@ -1278,7 +1279,7 @@ class TestCase(unittest.TestCase):
 
     def test_inverse_invalidData_case10(self):
         # Initialize the test data.
-        input1 =  (1,2 )
+        input1 = (1, 2)
 
         # Call the function under test.
         inverseOutput = calculator.Calculator.inverse(input1)
@@ -1346,7 +1347,7 @@ class TestCase(unittest.TestCase):
         inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertEqual(inverseOutput, 100000)
+        self.assertEqual(inverseOutput, 1/input1)
 
     def test_inverse_validEdgeCaseData_case2(self):
         # Initialize the test data.
@@ -1356,7 +1357,7 @@ class TestCase(unittest.TestCase):
         inverseOutput = calculator.Calculator.inverse(input1)
 
         # Assert expectations after the function call.
-        self.assertEqual(inverseOutput, -100000)
+        self.assertEqual(inverseOutput, 1/input1)
 
     def test_inverse_validEdgeCaseData_case3(self):
         # Initialize the test data.
@@ -1476,7 +1477,7 @@ class TestCase(unittest.TestCase):
 
     def test_factorial_invalidData_case9(self):
         # Initialize the test data.
-        input1 = floart("inf")
+        input1 = math.inf
 
         # Call the function under test.
         factorialOutput = calculator.Calculator.factorial(input1)
@@ -1531,7 +1532,7 @@ class TestCase(unittest.TestCase):
         factorialOutput = calculator.Calculator.factorial(input1)
 
         # Assert expectations after the function call.
-        self.assertEqual(factorialOutput, math.factorial(input1))
+        self.assertEqual(factorialOutput, 9.332621544394415e+155)
 
     #Valid Edge Case Data Test Cases
     def test_factorial_validEdgeCaseData_case1(self):
@@ -1560,6 +1561,15 @@ class TestCase(unittest.TestCase):
 
         # Assert expectations after the function call.
         self.assertEqual(factorialOutput, math.factorial(input1))
+
+
+
+
+
+
+
+
+
 
 
     # Invalid data test case 1 for absolute() function
