@@ -41,7 +41,11 @@ class Calculator:
     # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
     # This function expects that one numerical input is provided.
     def absolute(input1):
-        if type(input1) != int or type(input1) != float:
+        if type(input1) != int and type(input1) != float:
+            return None
+        if input1 > sys.maxsize:
+            return None
+        if input1 < -1 * sys.maxsize:
             return None
         if input1 >= 0:
             return input1
