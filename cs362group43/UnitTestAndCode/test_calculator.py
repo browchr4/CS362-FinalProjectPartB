@@ -1,5 +1,4 @@
-# Author: Christopher Brown (browchr4@oregonstate.edu), Ricardo Cousins (cousinsr@oregonstate.edu),
-#           David Passaro (passarod@oregonstate.edu)
+# Author: INSERT CHRIS, Ricardo Cousins (cousinsr@oregonstate.edu, ID 932194174), David Passaro (passarod@oregonstate.edu)
 # Course: OSU CS 362, Winter 2020
 # Assignment: Final Project
 # Assignment specification:
@@ -14,6 +13,7 @@
 
 import unittest
 import sys
+from unittest import TestCase
 import math
 import calculator
 
@@ -1771,7 +1771,7 @@ class TestCase(unittest.TestCase):
     def test_sine_validNonEdgeCaseData_case1(self):
         input1 = 2
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid non-edge data test case 2 for sine() function
     # Description:
@@ -1779,7 +1779,7 @@ class TestCase(unittest.TestCase):
     def test_sine_validNonEdgeCaseData_case2(self):
         input1 = -999
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid non-edge data test case 3 for sine() function
     # Description:
@@ -1787,7 +1787,7 @@ class TestCase(unittest.TestCase):
     def test_sine_validNonEdgeCaseData_case3(self):
         input1 = -79.7979
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid non-edge data test case 4 for sine() function
     # Description:
@@ -1795,15 +1795,15 @@ class TestCase(unittest.TestCase):
     def test_sine_validNonEdgeCaseData_case4(self):
         input1 = 110.998
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid non-edge data test case 5 for sine() function
     # Description:
     # Check that sine() returns the expected result when the input is a multiple of pi
     def test_sine_validNonEdgeCaseData_case5(self):
-        input1 = 2 * math.pi
+        input1 = 5 * math.pi
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid Edge data test case 1 for sine() function
     # Description:
@@ -1811,7 +1811,7 @@ class TestCase(unittest.TestCase):
     def test_sine_validEdgeCaseData_case1(self):
         input1 = 0
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid Edge data test case 2 for sine() function
     # Description:
@@ -1819,7 +1819,7 @@ class TestCase(unittest.TestCase):
     def test_sine_validEdgeCaseData_case2(self):
         input1 = sys.maxsize
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid Edge data test case 3 for sine() function
     # Description:
@@ -1827,7 +1827,7 @@ class TestCase(unittest.TestCase):
     def test_sine_validEdgeCaseData_case3(self):
         input1 = (-sys.maxsize)
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Valid Edge data test case 4 for sine() function
     # Description:
@@ -1835,7 +1835,7 @@ class TestCase(unittest.TestCase):
     def test_sine_validEdgeCaseData_case4(self):
         input1 = math.pi * (-3)
         expected = math.sin(input1)
-        self.assertEqual(expected, calculator.Calculator.sine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
     # Invalid data test case 1 for cosine() function
     # Description:
@@ -1913,7 +1913,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validNonEdgeCaseData_case1(self):
         input1 = 2
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid non-edge data test case 2 for cosine() function
     # Description:
@@ -1921,7 +1921,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validNonEdgeCaseData_case2(self):
         input1 = -999
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid non-edge data test case 3 for cosine() function
     # Description:
@@ -1929,7 +1929,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validNonEdgeCaseData_case3(self):
         input1 = -79.7979
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid non-edge data test case 4 for cosine() function
     # Description:
@@ -1937,7 +1937,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validNonEdgeCaseData_case4(self):
         input1 = 110.998
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid non-edge data test case 5 for cosine() function
     # Description:
@@ -1945,7 +1945,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validNonEdgeCaseData_case5(self):
         input1 = 2 * math.pi
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid Edge data test case 1 for cosine() function
     # Description:
@@ -1953,7 +1953,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validEdgeCaseData_case1(self):
         input1 = 0
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid Edge data test case 2 for cosine() function
     # Description:
@@ -1961,7 +1961,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validEdgeCaseData_case2(self):
         input1 = sys.maxsize
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid Edge data test case 3 for cosine() function
     # Description:
@@ -1969,7 +1969,7 @@ class TestCase(unittest.TestCase):
     def test_cosine_validEdgeCaseData_case3(self):
         input1 = (-sys.maxsize)
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
     # Valid Edge data test case 4 for cosine() function
     # Description:
@@ -1977,4 +1977,4 @@ class TestCase(unittest.TestCase):
     def test_cosine_validEdgeCaseData_case4(self):
         input1 = math.pi * (-3)
         expected = math.cos(input1)
-        self.assertEqual(expected, calculator.Calculator.cosine(input1))
+        self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
