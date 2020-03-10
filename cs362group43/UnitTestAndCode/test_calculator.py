@@ -1,4 +1,5 @@
-# Author: INSERT CHRIS, Ricardo Cousins (cousinsr@oregonstate.edu, ID 932194174), David Passaro (passarod@oregonstate.edu)
+# Author: Christopher Brown (browchr4@oregonstate.edu), Ricardo Cousins (cousinsr@oregonstate.edu),
+#           David Passaro (passarod@oregonstate.edu)
 # Course: OSU CS 362, Winter 2020
 # Assignment: Final Project
 # Assignment specification:
