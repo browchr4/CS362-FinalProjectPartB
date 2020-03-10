@@ -109,13 +109,13 @@ class Calculator:
         if input1 < -1 * sys.maxsize:
             return None
         prepInput = input1
-        if Calculator.absolute(prepInput) == (2 * math.pi):
-            return 0
         if Calculator.absolute(prepInput) > (2 * math.pi):
             divisor = math.modf(prepInput / (2 * math.pi))
             prepInput = (2 * math.pi) * divisor[0]
         if prepInput < 0:
             prepInput = prepInput + (2 * math.pi)
+        if Calculator.absolute(prepInput) == (2 * math.pi) or prepInput == 0:
+            return 0
         temp = (prepInput*prepInput*prepInput) / 6
         total = prepInput - temp
         temp = (prepInput*prepInput*prepInput*prepInput*prepInput) / 120
@@ -145,13 +145,13 @@ class Calculator:
         if input1 < -1 * sys.maxsize:
             return None
         prepInput = input1
-        if Calculator.absolute(prepInput) == (2 * math.pi):
-            return 1
         if Calculator.absolute(prepInput) > (2 * math.pi):
             divisor = math.modf(prepInput / (2 * math.pi))
             prepInput = (2 * math.pi) * divisor[0]
         if prepInput < 0:
             prepInput = prepInput + (2 * math.pi)
+        if Calculator.absolute(prepInput) == (2 * math.pi) or prepInput == 0:
+            return 1
         temp = (prepInput * prepInput) / 2
         total = 1 - temp
         temp = (prepInput * prepInput * prepInput * prepInput) / 24
