@@ -1,4 +1,5 @@
-# Author: INSERT CHRIS, Ricardo Cousins (cousinsr@oregonstate.edu, ID 932194174), INSERT DAVID
+# Author: Christopher Brown (browchr4@oregonstate.edu), Ricardo Cousins (cousinsr@oregonstate.edu)
+#           David Passaro (passarod@oregonstate.edu)
 # Course: OSU CS 362, Winter 2020
 # Assignment: Final Project
 # Assignment specification:
@@ -18,23 +19,62 @@ class Calculator:
     # If either input provided is not of type int or float, the function returns None.
     # If either input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
     # This function expects that two numerical inputs are provided.
+    @staticmethod
     def multiply(input1, input2):
-        return None
+        # Ensure that input1 is a float or int.
+        if type(input1) != int and type(input1) != float:
+            return None
+        # Ensure that input2 is a float or int.
+        if type(input2) != int and type(input2) != float:
+            return None
+        # Ensure that input 1 is within the supported numerical range.
+        if input1 < -sys.maxsize or input1 > sys.maxsize:
+            return None
+        # Ensure that input 1 is within the supported numerical range.
+        if input2 < -sys.maxsize or input2 > sys.maxsize:
+            return None
+        product = input1 * input2
+        return product
 
     # This function takes two numerical inputs of type int or float, and returns the quotient of input1 / input2.
     # If either input provided is not of type int or float, the function returns None.
     # If either input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
     # If input2 equals 0, the function returns None.
     # This function expects that two numerical inputs are provided.
+    @staticmethod
     def divide(input1, input2):
-        return None
+        # Ensure that input1 is a float or int.
+        if type(input1) != int and type(input1) != float:
+            return None
+        # Ensure that input2 is a float or int.
+        if type(input2) != int and type(input2) != float:
+            return None
+        # Ensure that input 1 is within the supported numerical range.
+        if input1 < -sys.maxsize or input1 > sys.maxsize:
+            return None
+        # Ensure that input 1 is within the supported numerical range.
+        if input2 < -sys.maxsize or input2 > sys.maxsize:
+            return None
+        # Ensure that input2 does not equal 0.
+        if input2 == 0:
+            return None
+        quotient = input1 / input2
+        return quotient
 
     # This function takes one numerical input of type int or float, and returns the square of the input.
     # If the input provided is not of type int or float, the function returns None.
     # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
     # This function expects that one numerical input is provided.
+    @staticmethod
     def square(input1):
-        return input1 * input1;
+        # Ensure that input1 is a float or int.
+        if type(input1) != int and type(input1) != float:
+            return None
+        # Ensure that input 1 is within the supported numerical range.
+        if input1 < -sys.maxsize or input1 > sys.maxsize:
+            return None
+        square = input1 * input1
+        return square
 
     # This function takes one numerical input of type int or float, and returns the absolute value of the input.
     # If the input provided is not of type int or float, the function returns None.
