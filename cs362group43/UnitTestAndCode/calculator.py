@@ -98,7 +98,35 @@ class Calculator:
     # If the input provided is outside the range -sys.maxsize <= input <= sys.maxsize, the function returns None.
     # This function expects that one numerical input is provided.
     def cosine(input1):
-        return None
+        if type(input1) != int and type(input1) != float:
+            return None
+        if input1 > sys.maxsize:
+            return None
+        if input1 < -1 * sys.maxsize:
+            return None
+        prepInput = input1
+        if Calculator.absolute(prepInput) == (2 * math.pi):
+            return 1
+        if Calculator.absolute(prepInput) > (2 * math.pi):
+            divisor = math.modf(prepInput / (2 * math.pi))
+            prepInput = (2 * math.pi) * divisor[0]
+        if prepInput < 0:
+            prepInput = prepInput + (2 * math.pi)
+        temp = (prepInput * prepInput) / 2
+        total = 1 - temp
+        temp = (prepInput * prepInput * prepInput * prepInput) / 24
+        total = total + temp
+        temp = (prepInput * prepInput * prepInput * prepInput * prepInput * prepInput) / 720
+        total = total - temp
+        temp = (prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput) / 40320
+        total = total + temp
+        temp = (prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput) / 3628800
+        total = total - temp
+        temp = (prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput) / 479001600
+        total = total + temp
+        temp = (prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput * prepInput) / 87178291200
+        total = total - temp
+        return total
 
     # This function takes one numerical input of type int or float, and returns the square root of the input.
     # If the input provided is not of type int or float, the function returns None.
