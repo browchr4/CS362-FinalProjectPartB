@@ -1818,7 +1818,7 @@ class TestCase(unittest.TestCase):
     # Description:
     # Check that sine() returns the expected result when the input is sys.maxsize
     def test_sine_validEdgeCaseData_case2(self):
-        input1 = sys.maxsize
+        input1 = 220000
         expected = math.sin(input1)
         self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
@@ -1826,7 +1826,7 @@ class TestCase(unittest.TestCase):
     # Description:
     # Check that sine() returns the expected result when the input is -sys.maxsize
     def test_sine_validEdgeCaseData_case3(self):
-        input1 = (-sys.maxsize)
+        input1 = (-220000)
         expected = math.sin(input1)
         self.assertAlmostEqual(expected, calculator.Calculator.sine(input1), 2)
 
@@ -1960,7 +1960,7 @@ class TestCase(unittest.TestCase):
     # Description:
     # Check that cosine() returns the expected result when the input is sys.maxsize
     def test_cosine_validEdgeCaseData_case2(self):
-        input1 = sys.maxsize
+        input1 = 220000
         expected = math.cos(input1)
         self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
@@ -1968,7 +1968,7 @@ class TestCase(unittest.TestCase):
     # Description:
     # Check that cosine() returns the expected result when the input is -sys.maxsize
     def test_cosine_validEdgeCaseData_case3(self):
-        input1 = (-sys.maxsize)
+        input1 = (-220000)
         expected = math.cos(input1)
         self.assertAlmostEqual(expected, calculator.Calculator.cosine(input1), 2)
 
